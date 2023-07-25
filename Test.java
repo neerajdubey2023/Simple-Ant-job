@@ -8,7 +8,7 @@
     
    System.out.println("\nThis is my First testing...!");   
 
-   System.out.println("Successful")
+   System.out.println("Successful");
    }
 
 } 
