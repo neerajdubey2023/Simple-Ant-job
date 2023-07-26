@@ -12,7 +12,7 @@ pipeline {
             steps{
                 echo 'in step2'
                 println "The groovy runtime version is $GroovySystem.version"
-                //script{
+                script{
                     def getURL = new URL('http://localhost:1100/rest-api/customers/1')
                     def connection = getURL.openConnection()
                     connection.requestMethod = 'GET'
@@ -22,7 +22,7 @@ pipeline {
                 
                     BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-                   // println("\nThe JSON format of customer sent by rest-server...\n");
+                   println("\nThe JSON format of customer sent by rest-server...\n");
 
                     line = reader.readLine();
                     def res =line
@@ -33,7 +33,7 @@ pipeline {
 	                    line = reader.readLine();
                     }
                     connection.disconnect();
-                 //}
+                 }
 
             }
         }
