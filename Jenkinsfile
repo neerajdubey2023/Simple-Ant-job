@@ -41,15 +41,15 @@ println customer.address
 
 println "The json response address object is  "+customer.address.getClass().getName()
 
- addressMap = customer.address
- id = addressMap.get('id');
- street = addressMap.get('street');
- houseNumber = addressMap.get('houseNumber');
- city = addressMap.get('city');
+ def addressMap = customer.address
+ def id = addressMap.get('id');
+ def street = addressMap.get('street');
+ def houseNumber = addressMap.get('houseNumber');
+ def city = addressMap.get('city');
   
  println "The response address details are $id ,$city, $street and $houseNumber"
  
- accountMap = customer.account
+ def accountMap = customer.account
  id = accountMap.get('id');
  branch = accountMap.get('branch');
  acNumber = accountMap.get('acNumber'); 
