@@ -33,8 +33,39 @@ pipeline {
 	                    line = reader.readLine();
                     }
                     connection.disconnect();
+
+def slurper = new JsonSlurper()
+def customer = slurper.parseText(res)
+
+println customer.address
+
+println "The json response address object is  "+customer.address.getClass().getName()
+
+ addressMap = customer.address
+ id = addressMap.get('id');
+ street = addressMap.get('street');
+ houseNumber = addressMap.get('houseNumber');
+ city = addressMap.get('city');
+  
+ println "The response address details are $id ,$city, $street and $houseNumber"
+ 
+ accountMap = customer.account
+ id = accountMap.get('id');
+ branch = accountMap.get('branch');
+ acNumber = accountMap.get('acNumber'); 
+  
+ println "The response account details are $id ,$branch and $acNumber"
+ 
+ firstName = customer.get('firstName');
+ lastName = customer.get('lastName');
+  
+ println "The response customer details are $firstName and $lastName"
+
+println "Done with Get"
+
                  }
 
+		
             }
         }
     }
