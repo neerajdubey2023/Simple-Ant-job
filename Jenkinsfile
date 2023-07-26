@@ -34,7 +34,7 @@ pipeline {
                     }
                     connection.disconnect();
 
-def slurper = new JsonSlurper()
+def slurper = new groovy.json.JsonSlurper()
 def customer = slurper.parseText(res)
 
 println customer.address
